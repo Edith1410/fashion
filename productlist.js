@@ -42,6 +42,7 @@ function visData(json) {
   json.forEach((element) => {
     topslist.innerHTML += `
    <article class="card">
+   <img> ${element.picture}</img>
    <h2>${element.productdisplayname}</2>
    <h3>${element.brandname}</3>
    <p>${element.price}</p>
