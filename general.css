@@ -1,0 +1,16 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+article {
+  border: solid, black, 1px;
+  border-radius: 20px;
+}
+
+@media (min-width: 800px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
