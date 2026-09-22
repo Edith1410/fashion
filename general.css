@@ -8,9 +8,21 @@ article {
   border: solid, black, 1px;
   border-radius: 20px;
 }
+img {
+  max-width: 100%;
+}
 
 @media (min-width: 800px) {
   section {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+header {
+  background-color: beige;
+}
+body {
+  background-color: aliceblue;
+}
+a {
+  text-decoration: none;
 }
