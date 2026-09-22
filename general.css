@@ -1,0 +1,41 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+article {
+  border: solid, black, 3px;
+  border-radius: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card img {
+  max-width: 100%;
+  border-bottom: 2px solid black;
+  border-radius: 20px;
+}
+
+@media (min-width: 800px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+header {
+  background-color: rgb(203, 212, 222);
+}
+body {
+  background-color: aliceblue;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.logo-billede {
+  max-width: 75px;
+}
