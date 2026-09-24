@@ -52,3 +52,27 @@ function visData(json) {
  `;
   });
 }
+
+const productId = new URLSearchParams(window.location.search).get("id");
+const productContainer = document.querySelector("#productContainer");
+const endpoint = "https://kea-alt-del.dk/t7/api/products/${productId}";
+
+function visData() {
+  fetch(endpoint)
+    .then((respone) => Response.json())
+    .then(renderProduct);
+}
+
+function renderProduct(data) {
+  productContainer.innerHTML = `
+<div>
+<a href="productlist
+
+<img
+src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp"
+alt="produktbillede"
+class="produktImage"
+/>
+</div>
+`;
+}
