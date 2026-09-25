@@ -1,46 +1,19 @@
-// const tops = [
-//   {
-//     brand: "Pull and bear",
-//     sizes: ["s", "m", "l", "xl"],
-//     color: "pink",
-//     price: "350kr.",
-//   },
-//   {
-//     brand: "Next",
-//     sizes: ["s", "m", "l"],
-//     color: "black",
-//     price: "325kr",
-//   },
-//   {
-//     brand: "Pull and bear",
-//     sizes: ["m", "l", "xl"],
-//     color: "brown",
-//     price: "400kr",
-//   },
-// ];
-// const topslist = document.querySelector(".topslist");
-// tops.forEach(showTops);
+const cat = new URLSearchParams(window.location.search).get("cat");
 
-// function showTops(top) {
-//   topslist.innerHTML += `
-//   <article class="card">
-//   <h3>${top.brand}</3>
-//   <h2>${top.sizes}</h2>
-//   <p>${top.color}</p>
-//   <p>${top.price}</p>
-//   </article>
-//   `;
-// }
-
-const endpoint = `https://kea-alt-del.dk/t7/api/products?limit=21`;
+// const endpoint = `https://kea-alt-del.dk/t7/api/products?limit=21`;
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${cat}`;
 
 const topslist = document.querySelector(".topslist");
+
+const h2 = document.querySelector("h2");
+h2.textContent = cat;
 
 fetch(endpoint).then((res) => res.json().then(visData));
 
 function visData(json) {
   json.forEach((element) => {
     topslist.innerHTML += `
+    <a href=productdetails.html?id=${element.id}>
    <article class="card">
    <img src=${`https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp`} alt="produktbillede"/>
    <h2>${element.productdisplayname}</2>
@@ -49,30 +22,7 @@ function visData(json) {
    <p>${element.gender}</p>
    <p>${element.category}</p>
    </article>
+   </a>
  `;
   });
-}
-
-const productId = new URLSearchParams(window.location.search).get("id");
-const productContainer = document.querySelector("#productContainer");
-const endpoint = "https://kea-alt-del.dk/t7/api/products/${productId}";
-
-function visData() {
-  fetch(endpoint)
-    .then((respone) => Response.json())
-    .then(renderProduct);
-}
-
-function renderProduct(data) {
-  productContainer.innerHTML = `
-<div>
-<a href="productlist
-
-<img
-src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp"
-alt="produktbillede"
-class="produktImage"
-/>
-</div>
-`;
 }
