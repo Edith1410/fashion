@@ -12,6 +12,11 @@
   }
 }
 
+#produkt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -19,10 +24,11 @@ section {
 }
 
 .card {
+  position: relative;
   border: solid, black, 3px;
   border-radius: 20px;
   background-color: white;
-  cursor: posinter;
+  cursor: pointer;
 }
 
 header {
@@ -40,7 +46,8 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-header {
+header,
+footer {
   background-color: rgb(203, 212, 222);
 }
 body {
@@ -50,6 +57,34 @@ a {
   text-decoration: none;
   color: black;
 }
+
 .logo-billede {
   max-width: 75px;
+}
+
+/* udsolgt */
+.udsolgt {
+  filter: grayscale(1);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.SoldOut {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background-color: yellow;
+  color: black;
+  rotate: -10deg;
+}
+
+/* rabat */
+.Discountlabel {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  background-color: yellow;
+  color: black;
+  rotate: -10deg;
 }
