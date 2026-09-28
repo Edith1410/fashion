@@ -12,6 +12,11 @@
   }
 }
 
+#produkt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -19,6 +24,7 @@ section {
 }
 
 .card {
+  position: relative;
   border: solid, black, 3px;
   border-radius: 20px;
   background-color: white;
@@ -73,13 +79,6 @@ a {
 }
 
 /* rabat */
-
-.discount {
-  filter: grayscale(1);
-  opacity: 0.5;
-  pointer-events: none;
-}
-
 .Discountlabel {
   position: absolute;
   top: 1rem;
