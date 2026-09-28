@@ -1,0 +1,12 @@
+.topslist {
+  display: flex;
+  align-items: flex-start;
+}
+
+.text {
+  flex: 1;
+  margin: 2rem;
+}
+.text h2 {
+  text-decoration: underline;
+}
