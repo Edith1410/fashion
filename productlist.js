@@ -3,14 +3,35 @@ const cat = new URLSearchParams(window.location.search).get("cat");
 // const endpoint = `https://kea-alt-del.dk/t7/api/products?limit=21`;
 const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${cat}`;
 
-const topslist = document.querySelector(".topslist");
-
 const h2 = document.querySelector("h2");
 h2.textContent = cat;
 
-fetch(endpoint).then((res) => res.json().then(visData));
+const topslist = document.querySelector(".topslist");
+
+document.querySelectorAll("#filtre button").forEach((button) => button.addEventListener("click", filtrer));
+
+let alleData, udsnit;
+
+fetch(endpoint).then((res) =>
+  res.json().then((data) => {
+    alleData = udsnit = data;
+    visData(data);
+  }),
+);
+
+function filtrer(e) {
+  console.log(e.target.textContent);
+  const valgt = e.target.textContent;
+  if (valgt == "All") {
+    udsnit = alleData;
+  } else {
+    udsnit = alleData.filter((element) => element.gender == valgt);
+  }
+  visData(udsnit);
+}
 
 function visData(json) {
+  topslist.innerHTML = "";
   json.forEach((element) => {
     const Tilbudspris = Math.round(element.price - (element.price * element.discount) / 100);
     topslist.innerHTML += `
@@ -31,5 +52,3 @@ function visData(json) {
  `;
   });
 }
-
-document.querySelectorAll("button");
