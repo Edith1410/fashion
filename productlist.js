@@ -9,6 +9,7 @@ h2.textContent = cat;
 const topslist = document.querySelector(".topslist");
 
 document.querySelectorAll("#filtre button").forEach((button) => button.addEventListener("click", filtrer));
+const visAntal = document.querySelector("#filtre span");
 
 let alleData, udsnit;
 
@@ -31,6 +32,7 @@ function filtrer(e) {
 }
 
 function visData(json) {
+  visAntal.textContent = json.length;
   topslist.innerHTML = "";
   json.forEach((element) => {
     const Tilbudspris = Math.round(element.price - (element.price * element.discount) / 100);
