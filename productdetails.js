@@ -26,6 +26,7 @@ function visData(element) {
             <p>kr. ${element.price},-</p>
             <p>${element.category}</p>
             <p>${element.gender}</p>
+            <p>${element.description}</p>
             </div>
         </article>
         </a>`;
