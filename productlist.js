@@ -31,3 +31,5 @@ function visData(json) {
  `;
   });
 }
+
+document.querySelectorAll("button");
