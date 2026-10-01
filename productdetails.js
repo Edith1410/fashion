@@ -16,7 +16,7 @@ fetch(endpoint)
 function visData(element) {
   console.log(element);
   produkt.innerHTML = `<a href=productdetails.html?id=${element.id}>
-        <article class="topslist">
+        <article class="detailview">
         <div>
         <img src=https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp alt="produktbillede" />
         </div>

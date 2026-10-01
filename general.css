@@ -12,17 +12,11 @@
   }
 }
 
-#produkt {
+.topslist {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
 }
-
 .card {
   position: relative;
   border: solid, black, 3px;

@@ -1,10 +1,9 @@
-.topslist {
-  display: flex;
-  align-items: flex-start;
+.detailview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .text {
-  flex: 1;
   margin: 2rem;
 }
 .text h2 {
