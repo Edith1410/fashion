@@ -3,9 +3,6 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.text {
-  margin: 2rem;
-}
 .text h2 {
   text-decoration: underline;
 }
